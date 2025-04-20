@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rizline Beat Analysis</title>
+</head>
+<body>
+    <div id="body">
+        <h1>Rizline Beat Analysis</h1>
+        <div id="fps"></div>
+        <div id="chartTime"></div>
+        <input type="file" onchange="readChart(this.files)">
+        <input type="file" onchange="bgmFiles(this.files)">
+        <div>
+            <button onclick="start()">Start</button>
+            <button onclick="audio.pause(); stopMetronome()">Stop</button>
+            <!-- <button onclick="metronomeActive ? stopMetronome() : startMetronome()">Toggle Metronome</button> -->
+        </div>
+        <br>
+        <canvas id="canvas"></canvas>
+        <audio id="audio"></audio>
+        <audio id="tap" src="audio/tap.wav"></audio>
+    </div>
+</body>
+<script src="js/main.js"></script>
+</html>
