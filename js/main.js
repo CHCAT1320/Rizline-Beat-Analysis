@@ -102,24 +102,24 @@ function bpmToSecond(time, bpm, bpmJson) {
 function riztime(timer){
     if (chart.challengeTimes.length === 1){
         if (timer > chart.challengeTimes[0].start){
-                noteColor = chart.themes[1].colorsList[1]
-                backGroundColor = chart.themes[1].colorsList[0]
-                if (timer > chart.challengeTimes[0].end){
-                    noteColor = chart.themes[0].colorsList[1]
-                    backGroundColor = chart.themes[0].colorsList[0]
-                }
+            noteColor = chart.themes[1].colorsList[1]
+            backGroundColor = chart.themes[1].colorsList[0]
+            if (timer > chart.challengeTimes[0].end){
+                noteColor = chart.themes[0].colorsList[1]
+                backGroundColor = chart.themes[0].colorsList[0]
+            }
         }
     }
     if (chart.challengeTimes.length > 1){
-        if (riztimeNumber < chart.challengeTimes.length){
+        if (riztimeNumber < chart.challengeTimes.length - 1){
             if (timer > chart.challengeTimes[riztimeNumber].end){
                 noteColor = chart.themes[0].colorsList[1]
                 backGroundColor = chart.themes[0].colorsList[0]
                 riztimeNumber += 1
             }
             if (timer > chart.challengeTimes[riztimeNumber].start){
-                    noteColor = chart.themes[riztimeNumber].colorsList[1]
-                    backGroundColor = chart.themes[riztimeNumber].colorsList[0]
+                noteColor = chart.themes[1].colorsList[1]
+                backGroundColor = chart.themes[1].colorsList[0]
             }
         }
     }
